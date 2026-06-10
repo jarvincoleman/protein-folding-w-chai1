@@ -24,14 +24,13 @@ candidates = run_inference(
     use_esm_embeddings=True, 
 )
 
-cif_text = open(cif_paths[0]).read() 
-
 view = py3Dmol.view(width=800, height=600)
 view.addModel(cif_text, "cif")
 view.setStyle({"cartoon":{"color":"spectrum"}})
 view.zoomTo() 
 view.show()
 cif_paths = candidates.cif_paths
+cif_text = open(cif_paths[0]).read() 
 agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
 print("CIF paths:", cif_paths) 
 print("Scores:, ", agg_scores)
