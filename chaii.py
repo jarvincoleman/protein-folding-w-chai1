@@ -2,6 +2,14 @@ from pathlib import Path
 import torch 
 from chai_lab.chai1 import run_inference
 
+import inspect
+from chai_lab.chai1 import run_inference
+print(inspect.signature(run_inference))
+
+
+
+
+
 Path("outputs").mkdir(exist_ok=True) 
 
 candidates = run_inference(
