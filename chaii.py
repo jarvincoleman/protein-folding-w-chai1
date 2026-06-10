@@ -5,7 +5,7 @@ subprocess.run(["pip", "install", "py3Dmol", "-q"], check=True)
 import py3Dmol
 from chai_lab.chai1 import run_inference
 
-fasta_path = Path("input.fasta")
+fasta_path = Path("/kaggle/working/protein-folding-w-chai1/input.fasta")
 
 
 output_dir = Path("outputs")
