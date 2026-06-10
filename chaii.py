@@ -24,7 +24,7 @@ candidates = run_inference(
     use_esm_embeddings=True, 
 )
 
-cif_text = open("outputs/pred.model_idx_0_cif").read()
+cif_text = open(cif_paths[0]).read() 
 
 view = py3Dmol.view(width=800, height=600)
 view.addModel(cif_text, "cif")
