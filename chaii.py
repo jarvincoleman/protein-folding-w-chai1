@@ -1,16 +1,18 @@
 from pathlib import Path 
 import torch 
-from chai_lab.chai1 import run_inference
-
+import shutil 
 import inspect
 from chai_lab.chai1 import run_inference
-print(inspect.signature(run_inference))
 
 
+fasta_path = Path("input.fasta")
 
+fasta_path.write_text()
 
-
-Path("outputs").mkdir(exist_ok=True) 
+output_dir = Path("/tmp/outputs")
+if output_dir.exists():
+    shutil.rmtree(output_dir)
+output_dir.mkdir(exist_ok=True) 
 
 candidates = run_inference(
     fasta_file = Path("input.fasta"), 
@@ -23,5 +25,10 @@ candidates = run_inference(
     use_esm_embeddings=True, 
 )
 
-print(candidates)
+cif_paths = candidates.cif_paths
+agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
+print("CIF paths:", cif_paths) 
+print("Scores:, ", agg_scores)
+
+
 
