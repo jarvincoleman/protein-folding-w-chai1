@@ -1,13 +1,10 @@
 from pathlib import Path 
-import torch 
 import shutil 
-import inspect
 from chai_lab.chai1 import run_inference
 
 
 fasta_path = Path("input.fasta")
 
-fasta_path.write_text()
 
 output_dir = Path("/tmp/outputs")
 if output_dir.exists():
