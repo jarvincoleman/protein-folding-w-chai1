@@ -1,7 +1,8 @@
 from pathlib import Path 
 import shutil 
 from chai_lab.chai1 import run_inference
-
+import subprocess
+import py3Dmol
 
 fasta_path = Path("input.fasta")
 
@@ -22,6 +23,13 @@ candidates = run_inference(
     use_esm_embeddings=True, 
 )
 
+cif_text = open("outputs/pred.model_idx_0_cif").read()
+
+view = py3Dmol.view(width=800, height=600)
+view.addModel(cif_text, "cif")
+view.setStyle({"cartoon":{"color":"spectrum"}})
+view.zoomTo() 
+view.show()
 cif_paths = candidates.cif_paths
 agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
 print("CIF paths:", cif_paths) 
