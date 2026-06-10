@@ -1,8 +1,9 @@
 from pathlib import Path 
 import shutil 
-from chai_lab.chai1 import run_inference
 import subprocess
+subprocess.run(["pip", "install", "py3Dmol", "-q"], check=True)
 import py3Dmol
+from chai_lab.chai1 import run_inference
 
 fasta_path = Path("input.fasta")
 
