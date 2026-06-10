@@ -29,9 +29,3 @@ agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
 print("CIF paths:", cif_paths) 
 print("Scores:, ", agg_scores)
 
-view = py3Dmol.view(width=800, height=600)
-view.addModel(cif_text, "cif")
-view.setStyle({"cartoon":{"color":"spectrum"}})
-view.zoomTo() 
-view.show()
-
