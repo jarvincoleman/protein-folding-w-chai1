@@ -8,7 +8,7 @@ from chai_lab.chai1 import run_inference
 fasta_path = Path("input.fasta")
 
 
-output_dir = Path("/tmp/outputs")
+output_dir = Path("outputs")
 if output_dir.exists():
     shutil.rmtree(output_dir)
 output_dir.mkdir(exist_ok=True) 
