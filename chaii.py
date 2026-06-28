@@ -23,6 +23,12 @@ candidates = run_inference(
     device = "cuda",
     use_esm_embeddings=True, 
 )
+
+
+rna_seq = run_inference(
+    fasta_file = fasta_path, 
+    output_dir = output_dir,
+)
 cif_paths = candidates.cif_paths
 cif_text = open(cif_paths[0]).read() 
 agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
