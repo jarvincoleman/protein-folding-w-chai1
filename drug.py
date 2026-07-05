@@ -1,6 +1,6 @@
 import py3Dmol 
 from chai_lab.chai1 import run_inference 
-from chaii.py import fasta_path
+from chaii.py import fasta_path, rna_seq
 
 
 
@@ -12,8 +12,11 @@ class DrugInference:
         self.rna_type = rna_type
 
 
-        id = [] 
+        id = []
 
+        rna_type = rna_seq[fasta_path]
+
+        
         
 
 
