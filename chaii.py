@@ -5,6 +5,10 @@ subprocess.run(["pip", "install", "py3Dmol", "-q"], check=True)
 import py3Dmol
 from chai_lab.chai1 import run_inference
 
+
+
+
+
 fasta_path = Path("/kaggle/working/protein-folding-w-chai1/input.fasta")
 
 
@@ -12,6 +16,7 @@ output_dir = Path("/kaggle/working/outputs")
 if output_dir.exists():
     shutil.rmtree(output_dir)
 output_dir.mkdir(exist_ok=True) 
+
 
 candidates = run_inference(
     fasta_file = fasta_path, 
@@ -29,6 +34,8 @@ rna_seq = run_inference(
     fasta_file = fasta_path, 
     output_dir = output_dir,
 )
+
+
 cif_paths = candidates.cif_paths
 cif_text = open(cif_paths[0]).read() 
 agg_scores = [rd.aggregate_score.item() for rd in candidates.ranking_data]
