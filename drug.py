@@ -12,7 +12,10 @@ class DrugInference:
         self.rna_type = rna_type
 
 
-        id = []
+        for id in input.fasta: 
+            if fasta_path[id]: 
+                print(id, abrv_name)
+        
 
         rna_type = rna_seq[fasta_path]
 
