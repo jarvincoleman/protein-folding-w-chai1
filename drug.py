@@ -17,10 +17,12 @@ class DrugInference:
                 print(id, abrv_name)
         
 
+
+
         rna_type = rna_seq[fasta_path]
 
         
-        
+    
 
 
     def classify(self, id):
@@ -29,3 +31,20 @@ class DrugInference:
 
     def match(self):
         pass
+
+class Misselection: 
+    def __init__(self, mis_binding, _id, _type):
+
+        self.mis_binding = mis_binding
+        self._id = _id
+        self._type = _type
+
+
+        err_list = pass
+
+
+
+
+
+pass
+
