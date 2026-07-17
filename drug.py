@@ -1,7 +1,7 @@
 import py3Dmol 
 from chai_lab.chai1 import run_inference 
 from chaii.py import fasta_path, rna_seq
-
+### import input.fasta 
 
 
 
@@ -19,7 +19,7 @@ class DrugInference:
 
 
 
-        rna_type = rna_seq[fasta_path]
+        rna_type == rna_seq[fasta_path]
 
         
     
@@ -40,7 +40,9 @@ class Misselection:
         self._type = _type
 
 
-        err_list = pass
+
+
+        ### err_list = list(input.fasta)
 
 
 
